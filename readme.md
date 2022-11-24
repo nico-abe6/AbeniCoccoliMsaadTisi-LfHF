@@ -38,8 +38,8 @@ then it is going to save the reward learning list and plot the results, the lear
 # Add Human Preference
 
 copy the .npy array with the rewards from HumanPreference to the /AbeniCoccoliMsaadTisi-LfHF/DRL-using-PyTorch/DQNfromDemo/Test folder
-open the grafico.py script, insert the names of the files correctly, rewards from HP and from LfD and DQN
-run the grafico.py to see the 3 methods learning curves compared.
+open the plot_learning_curves.py script, insert the names of the files correctly, rewards from HP and from LfD and DQN
+run the plot_learning_curves.py to see the 3 methods learning curves compared.
 
 
 
