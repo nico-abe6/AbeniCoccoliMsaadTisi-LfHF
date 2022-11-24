@@ -1,59 +1,50 @@
-# OpenAI Gaming
+## Initialization
 
-Play games in the [OpenAI gym](https://gym.openai.com/envs/) using the keyboard.
+create a conda enviroment in order to do not create conficts between different libraries, with python 3.7 and all the packages in the requirements.txt.
 
-Example invocation: `python3 play.py CartPole-v1 --delay=50`
+*conda create -n "name_of_virtenv" python=3.7
 
-It is also possible to record a game (using the `-o` command-line switch).
-This can be used for apprenticeship learning.
+*conda activate "name_of_virtenv"
 
-## Mapping format
+*pip install -r reqiurements.txt
 
-For every game, the computer must know a mapping from keyboard keys to actions.
-Mappings can be specified as JSON files.
-To create a mapping for a game with id `x`, create the JSON file `keymaps/x.json`.
 
-Keys of the mapping can be:
+# Learning from Human Preferences
 
-* `"default"`
-* any alphanumeric character
-* the name of any `pynput.keyboard.Key` object, like `"left"`, `"right"`, `"space"`
+run the file 
 
-Values of the mapping can be:
 
-* a number
-* an array of floats (if actions are multi-dimensional)
-* `"next"` or `"prev"`: If actions are discrete, they are numbered from `0` to `n-1`.
-  If the action performed in the previous instant was `x`, `"next"` will perform the action `(x+1)%n`
-  and `"prev"` will perform the action `(x-1)%n`.
-* `"same"`: Perform the same action which was performed in the last instant.
-* `"random"`: Randomly sample an action from the action space.
+## Learning From Demonstration
+# Play the game and registration of data
 
-When no valid key is pressed, the action performed is the one corresponding to `"default"`.
-If `"default"` action is not specified, it is taken as `"random"`.
+In the OpenAI gym folder launch the play.py file with the following command
 
-For discrete-action games, unmapped keys from 0 to 9 are mapped to corresponding actions of the same number.
-This can be a good way to explore actions in a game and devise an appropriate keymap for it.
+*python3 play.py CartPole-v1 --delay=50`-o data
 
-## Recording a game
+where CartPole is the enviroment to play in, delay is slow down the frames in order to make it more easier for a human to play, data is the destination folder where the vectors with states,actions... are going to be stored.
 
-A game will be recorded in several files.
-If the environment is queried `t` times using `env.step`, then:
 
-* `states.npy` contains the `t+1` states seen in the game.
-* `actions.npy` contains the `t` actions selected by the player.
-* `rewards.npy` contains the `t` rewards obtained by the player.
-* `metadata.json` contains shapes and data types of states, actions and rewards
-  and miscellaneous data like total playing time, total score, whether game was interrupted, etc.
+# Train the agent with DQN
 
-All these files will be created in a directory whose path is specified in the `-o` command-line switch.
+Now make a copy of the CartPoleDemo.txt from data folder to the /AbeniCoccoliMsaadTisi-LfHF/DRL-using-PyTorch/DQNfromDemo/Test
+rename it differently but in this case you have to open manually the CartPole.py and insert the name of the file manually in the line of code 24 whre the TEST list is.
 
-## List all games
+run CartPole.py
 
-To list the games supported by the OpenAI gym, run this:
+*python CartPole.py
 
-```python
-import gym.envs
-for game_name in gym.envs.registry.env_specs.keys():
-    print(game_name)
-```
+then it is going to save the reward learning list and plot the results, the learning curve and the test results.
+
+# Add Human Preference
+
+copy the .npy array with the rewards from HumanPreference to the /AbeniCoccoliMsaadTisi-LfHF/DRL-using-PyTorch/DQNfromDemo/Test folder
+open the grafico.py script, insert the names of the files correctly, rewards from HP and from LfD and DQN
+run the grafico.py to see the 3 methods learning curves compared.
+
+
+
+
+
+
+
+
