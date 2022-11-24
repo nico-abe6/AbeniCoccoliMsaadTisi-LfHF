@@ -1,0 +1,14 @@
+{
+    "action_dtype": "int64",
+    "action_shape": [
+        1
+    ],
+    "done": true,
+    "observation_dtype": "float64",
+    "observation_shape": [
+        4
+    ],
+    "reward_dtype": "float64",
+    "score": 500.0,
+    "time": 500
+}
