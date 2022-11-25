@@ -1,13 +1,13 @@
 ## Initialization
 
 Create a conda enviroment in order to do not create conficts between different libraries, with python 3.7 and all the packages in the requirements.txt.
-
+'''
 * conda create -n "name_of_virtenv" python=3.7
 
 * conda activate "name_of_virtenv"
 
 * pip install -r reqiurements.txt
-
+'''
 
 # Learning from Human Preferences
 
