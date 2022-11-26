@@ -2,15 +2,15 @@
 
 Create a conda enviroment with python 3.7 in order to do not create conflicts between different libraries:
 ```
-* conda create -n "name_of_virtenv" python=3.7
+conda create -n "name_of_virtenv" python=3.7
 ```
 Then activate the environment:
 ```
-* conda activate "name_of_virtenv"
+conda activate "name_of_virtenv"
 ```
 Then install all the necessary libraries in the requirement file through the command:
 ```
-* pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 # Learning from Human Preferences
