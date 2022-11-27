@@ -4,13 +4,21 @@ Create a conda enviroment with python 3.7 in order to do not create conflicts be
 ```
 conda create -n "name_of_virtenv" python=3.7
 ```
-Then activate the environment:
+Activate the environment:
 ```
 conda activate "name_of_virtenv"
+```
+Clone the repository:
+```
+git clone https://github.com/nico-abe6/AbeniCoccoliMsaadTisi-LfHF.git
 ```
 Then install all the necessary libraries in the requirement file through the command:
 ```
 pip install -r requirements.txt
+```
+After having installed the requirements is necessary to upgrade the library pyglet even if is not supported by gym=0.15.4, after the installation you'll see a conflict but everything will work fine.
+```
+pip install pyglet==1.5.11
 ```
 
 # Learning from Human Preferences
