@@ -23,8 +23,11 @@ pip install pyglet==1.5.11
 
 # Learning from Human Preferences
 
-run the file 
-
+Inside the folder RL_HumanPreferences launch the file main.py
+```
+python main.py
+```
+When the program asks for preferences click 1,2 or 3 in order to do selection, and then the data will be stored in the folder and the plot in the folder plots/dqn.
 
 # Learning From Demonstration
 ## Play the game and registration of data
