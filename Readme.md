@@ -30,26 +30,24 @@ run the file
 # Play the game and registration of data
 
 In the OpenAI gym folder launch the play.py file with the following command
-
-*python3 play.py CartPole-v1 --delay=50`-o data
-
-where CartPole is the enviroment to play in, delay is slow down the frames in order to make it more easier for a human to play, data is the destination folder where the vectors with states,actions... are going to be stored.
-
+```
+python3 play.py CartPole-v1 --delay=50`-o data
+```
+where CartPole is the enviroment to play in, delay is to slow down the frames in order to make it more easier for a human to play, data is the destination folder where the vectors with states,actions... are going to be stored.
 
 # Train the agent with DQN
 
 Now make a copy of the CartPoleDemo.txt from data folder to the /AbeniCoccoliMsaadTisi-LfHF/DRL-using-PyTorch/DQNfromDemo/Test
-rename it differently but in this case you have to open manually the CartPole.py and insert the name of the file manually in the line of code 24 whre the TEST list is.
+rename it differently but in this case you have to open manually the CartPole.py and insert the name of the file in the line of code 24 where the TEST list is.
 
 run CartPole.py
-
-*python CartPole.py
-
+```
+python CartPole.py
+```
 then it is going to save the reward learning list and plot the results, the learning curve and the test results.
 
 # Add Human Preference
-
-copy the .npy array with the rewards from HumanPreference to the /AbeniCoccoliMsaadTisi-LfHF/DRL-using-PyTorch/DQNfromDemo/Test folder
+Copy the .npy array with the rewards from HumanPreference to the /AbeniCoccoliMsaadTisi-LfHF/DRL-using-PyTorch/DQNfromDemo/Test folder
 open the plot_learning_curves.py script, insert the names of the files correctly, rewards from HP and from LfD and DQN
 run the plot_learning_curves.py to see the 3 methods learning curves compared.
 
